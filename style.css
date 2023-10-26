@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    color: blueviolet;
+    background-color: black;
+}
+
+img{
+    align-items: center;
+    width: 300px;
+    height: 300px;
+}
+button{
+    background-color:brown;
+}
+select{
+    background-color: rgb(209, 113, 204);
+}
+option{
+    color: brown;
+    background-color: aqua;
+    animation-fill-mode: initial;
+}
+h3{
+    color: rgb(134, 22, 22);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    ;
+    font-weight: 100;
+}

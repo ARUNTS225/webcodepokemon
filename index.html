@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokimon Api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Pokemon</h1>
+  <select id="select">
+    <option>bulbasaur</option>
+    <option>ivysaur</option>
+    <option>venusaur</option>
+    <option>charmander</option>
+    <option>charmeleon</option>
+    <option>charizard</option>
+    <option>squirtle</option>
+    <option>wartortle</option>
+    <option>blastoise</option>
+    <option>caterpie</option>
+    <option>metapod</option>
+    <option>butterfree</option>
+    <option>weedle</option>
+    <option>kakuna</option>
+    <option>ditto</option>
+    <option>beedrill</option>
+    <option>pidgey</option>
+    <option>pidgeotto</option>
+    <option>pidgeot</option>
+    <option>rattata</option>
+    <option>raticate</option>
+
+  </select>
+  
+ 
+<button id="search" style="color: aqua;">View</button>
+<div class="img">
+
+</div>
+    <script>
+      document.getElementById('search').addEventListener("click",getPokemon);
+      function getPokemon(){
+        let name=document.getElementById('select').value
+
+     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+     .then(res=>{
+    if (res.ok){
+      console.log('success')
+      }
+      else{
+        console.log('not successful')
+    }
+        return res.json()
+      })
+      .then((data)=>{
+        document.querySelector('.img').innerHTML=
+        `<img src="${data.sprites.other["official-artwork"].front_default}"
+        alt="${data.name}"/>
+        <h3>Name:${data.name}</h3>
+        <h3>Weight:${data.weight}</h3>`
+      })
+      .catch((error)=>{
+        console.log(error)
+      })
+    }
+    </script>
+</body>
+</html>
